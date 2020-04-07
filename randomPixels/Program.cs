@@ -77,6 +77,13 @@ namespace randomPixels
                         Console.Write("enter a path to save files : ");
                         path = Console.ReadLine();
                     } while (!System.IO.Directory.Exists(path) || path.EndsWith("\\") || path.EndsWith("/") || path.Length < 3);
+
+                    int count = 0;
+                    do
+                    {
+                        Console.Write("Enter count (more than 0) : ");
+                    } while (!int.TryParse(Console.ReadLine(), out count) || count < 1);
+                    Console.WriteLine("count is " + count);
                 }
                 catch (Exception ex) { Console.Write("\n\nError : " + ex.Message + "\n\n"); }
             }
