@@ -22,6 +22,14 @@ namespace randomPixels
                     } while (!int.TryParse(Console.ReadLine(), out width) || width == 0);
                     Console.WriteLine("width is " + width);
 
+                    int height = 0;
+                    do
+                    {
+                        Console.Write("Enter height : ");
+                    } while (!int.TryParse(Console.ReadLine(), out height) || height == 0);
+                    Console.WriteLine("height is " + height);
+
+
                 }
                 catch (Exception ex) { Console.Write("\n\nError : " + ex.Message + "\n\n"); }
             }
