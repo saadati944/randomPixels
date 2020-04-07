@@ -70,6 +70,13 @@ namespace randomPixels
                         Console.Write("Enter BLUE end value (from 1 to 255) : ");
                     } while (!int.TryParse(Console.ReadLine(), out b_end) || b_end < 1 || b_end > 255);
                     Console.WriteLine("b_end is " + b_end);
+
+                    string path = "";
+                    do
+                    {
+                        Console.Write("enter a path to save files : ");
+                        path = Console.ReadLine();
+                    } while (!System.IO.Directory.Exists(path) || path.EndsWith("\\") || path.EndsWith("/") || path.Length < 3);
                 }
                 catch (Exception ex) { Console.Write("\n\nError : " + ex.Message + "\n\n"); }
             }
