@@ -29,7 +29,19 @@ namespace randomPixels
                     } while (!int.TryParse(Console.ReadLine(), out height) || height == 0);
                     Console.WriteLine("height is " + height);
 
+                    int r_start = 0;
+                    do
+                    {
+                        Console.Write("Enter RED start value (from 0 to 254) : ");
+                    } while (!int.TryParse(Console.ReadLine(), out r_start) || r_start < 0 || r_start > 254);
+                    Console.WriteLine("r_start is " + r_start);
 
+                    int r_end = 0;
+                    do
+                    {
+                        Console.Write("Enter RED end value (from 1 to 255) : ");
+                    } while (!int.TryParse(Console.ReadLine(), out r_end) || r_end < 1 || r_end > 255);
+                    Console.WriteLine("r_end is " + r_end);
                 }
                 catch (Exception ex) { Console.Write("\n\nError : " + ex.Message + "\n\n"); }
             }
