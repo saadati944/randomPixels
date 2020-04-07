@@ -84,6 +84,18 @@ namespace randomPixels
                         Console.Write("Enter count (more than 0) : ");
                     } while (!int.TryParse(Console.ReadLine(), out count) || count < 1);
                     Console.WriteLine("count is " + count);
+
+                    Bitmap b = new Bitmap(width, height);
+                    Random r = new Random();
+                    for (int c = 0; c < count; c++)
+                    {
+                        for (int i = 0; i < width; i++)
+                            for (int j = 0; j < height; j++)
+                            {
+                                b.SetPixel(i, j, Color.FromArgb(r.Next(r_start, r_end), r.Next(g_start, g_end), r.Next(b_start, b_end)));
+                            }
+                        b.Save(path + "\\" + c.ToString() + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                    }
                 }
                 catch (Exception ex) { Console.Write("\n\nError : " + ex.Message + "\n\n"); }
             }
